@@ -1,0 +1,122 @@
+Shortest Path Algorithm Test Framework
+======================================
+
+Quick Start
+-----------
+1. Compile all programs:
+   mingw32-make
+
+2. Generate query files (including guaranteed-path queries):
+   mingw32-make generate_queries
+
+3. Run tests:
+   mingw32-make test_quick      (Recommended - tests 10 queries with guaranteed paths)
+   or
+   mingw32-make test_random
+   or
+   mingw32-make test_file
+
+Compilation Targets
+-------------------
+mingw32-make              - Build main program and query generator
+mingw32-make all          - Build all programs
+mingw32-make debug        - Build debug version with debug symbols
+mingw32-make release      - Build optimized release version
+mingw32-make clean        - Clean build files
+mingw32-make clean_all    - Clean all generated files including queries
+mingw32-make help         - Show all available targets
+
+Test Modes
+----------
+The program supports three test modes:
+
+1. FILE MODE (test_file)
+   Usage: dijkstra_test.exe <graph_file> file <queries_folder> [query_file] [detailed_count] [verify]
+   Examples:
+     .\bin\dijkstra_test.exe data\USA-road-d.USA.gr file Queries
+     .\bin\dijkstra_test.exe data\USA-road-d.USA.gr file Queries normal_queries_1000.txt
+     .\bin\dijkstra_test.exe data\USA-road-d.USA.gr file Queries normal_queries_1000.txt 5 1
+
+2. RANDOM MODE (test_random)
+   Usage: dijkstra_test.exe <graph_file> random [query_count] [detailed_count] [verify]
+   Examples:
+     .\bin\dijkstra_test.exe data\USA-road-d.USA.gr random 100
+     .\bin\dijkstra_test.exe data\USA-road-d.USA.gr random 100 10 1
+     .\bin\dijkstra_test.exe data\USA-road-d.USA.gr random 50
+
+3. QUICK MODE (test_quick) - RECOMMENDED
+   Usage: dijkstra_test.exe <graph_file> quick <queries_folder> [query_file] [max_queries]
+   Examples:
+     .\bin\dijkstra_test.exe data\USA-road-d.USA.gr quick Queries
+     .\bin\dijkstra_test.exe data\USA-road-d.USA.gr quick Queries small_test_queries_10.txt 5
+
+Parameter Explanation
+---------------------
+<graph_file>        - Path to graph data file (e.g., data\USA-road-d.USA.gr)
+<queries_folder>    - Directory containing query files
+<query_file>        - Specific query file to test
+<query_count>       - Number of random queries to generate (default: 100)
+<detailed_count>    - Number of detailed results to display (default: 5-10)
+<verify>            - Verify result consistency (1=yes, 0=no, default: 1)
+<max_queries>       - Maximum queries for quick test (default: 5)
+
+Query Files Generation
+----------------------
+mingw32-make generate_queries
+This will create various test query files in the Queries/ directory:
+- small_test_queries_10.txt       (10 queries with guaranteed paths - RECOMMENDED)
+- normal_queries_1000.txt         (1000 queries)
+- large_scale_queries_10000.txt   (10000 queries)
+- complete_graph_queries_100.txt  (100 queries)
+- edge_case_queries.txt           (Special case queries)
+- single_node_queries.txt         (Single node tests)
+- empty_queries.txt               (Empty test file)
+
+NEW: small_test_queries_10.txt Features
+---------------------------------------
+- Contains exactly 10 query pairs
+- All queries guaranteed to have existing paths
+- Generated from nodes with outgoing edges
+- Perfect for quick performance testing
+- Avoids unreachable queries that waste time
+
+Performance Features
+--------------------
+- Timeout protection (10 seconds per query)
+- Memory management
+- Progress reporting
+- Result consistency verification
+- Automatic handling of unreachable nodes
+- Performance ratio calculation (Pairing vs Fibonacci)
+
+Recommended Usage for Large Graphs
+----------------------------------
+For graphs with millions of nodes (like USA-road-d.USA.gr):
+
+1. Start with quick mode (tests guaranteed-path queries):
+   mingw32-make test_quick
+
+2. For more extensive testing, use random mode:
+   mingw32-make test_random
+
+3. For detailed analysis with specific queries, use file mode:
+   .\bin\dijkstra_test.exe data\USA-road-d.USA.gr file Queries small_test_queries_10.txt
+
+Directory Structure
+-------------------
+project/
+├── src/                    Source code
+├── include/                Header files
+├── build/                  Object files (auto-generated)
+├── bin/                    Executables (auto-generated)
+├── Queries/                Query files (auto-generated)
+├── data/                   Graph data files (manual)
+└── Makefile
+
+Notes
+-----
+- Ensure graph data file exists in data\USA-road-d.USA.gr
+- small_test_queries_10.txt now guarantees all queries have paths
+- Each query timeout is set to 10 seconds to prevent hanging
+- Program automatically skips invalid nodes and handles errors
+- For best results, use the new small_test_queries_10.txt for quick testing
