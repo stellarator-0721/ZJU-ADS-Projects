@@ -1,0 +1,60 @@
+# Enhanced Stopword Analysis for Shakespeare Texts
+# Generated from: word_frequency_enhanced_filtering.txt
+# Total suggested stopwords: 63
+# 
+# Format: word (frequency, percentage, rank)
+# Criteria: High frequency, short words, functional words, Shakespeare-specific terms
+# 
+# === HIGH FREQUENCY FUNCTIONAL WORDS ===
+thy             # freq:   4157, 0.5069%, rank:  1 (HIGH)
+thee            # freq:   3266, 0.3983%, rank:  2 (HIGH)
+good            # freq:   2784, 0.3395%, rank:  3 (HIGH)
+lord            # freq:   2719, 0.3316%, rank:  4 (HIGH)
+sir             # freq:   2504, 0.3054%, rank:  5 (HIGH)
+love            # freq:   2067, 0.2521%, rank:  6 (HIGH)
+enter           # freq:   2033, 0.2479%, rank:  7 (HIGH)
+hath            # freq:   1963, 0.2394%, rank:  8 (HIGH)
+man             # freq:   1791, 0.2184%, rank:  9 (HIGH)
+king            # freq:   1523, 0.1857%, rank: 10 (HIGH)
+'tis            # freq:   1376, 0.1678%, rank: 11 (HIGH)
+speak           # freq:   1148, 0.1400%, rank: 12 (HIGH)
+doth            # freq:   1065, 0.1299%, rank: 13 (HIGH)
+time            # freq:   1063, 0.1296%, rank: 14 (HIGH)
+exeunt          # freq:   1035, 0.1262%, rank: 15 (HIGH)
+heart           # freq:   1020, 0.1244%, rank: 16 (HIGH)
+exit            # freq:    946, 0.1154%, rank: 17 (HIGH)
+art             # freq:    937, 0.1143%, rank: 18 (HIGH)
+death           # freq:    893, 0.1089%, rank: 19 (HIGH)
+hear            # freq:    882, 0.1076%, rank: 20 (HIGH)
+
+# === MEDIUM FREQUENCY WORDS ===
+men             # freq:    874, 0.1066%, rank: 21
+great           # freq:    871, 0.1062%, rank: 22
+life            # freq:    860, 0.1049%, rank: 23
+hand            # freq:    858, 0.1046%, rank: 24
+father          # freq:    828, 0.1010%, rank: 25
+sweet           # freq:    804, 0.0980%, rank: 26
+true            # freq:    796, 0.0971%, rank: 27
+fair            # freq:    794, 0.0968%, rank: 28
+master          # freq:    765, 0.0933%, rank: 29
+eyes            # freq:    755, 0.0921%, rank: 30
+god             # freq:    744, 0.0907%, rank: 31
+pray            # freq:    733, 0.0894%, rank: 32
+day             # freq:    722, 0.0880%, rank: 33
+lady            # freq:    668, 0.0815%, rank: 35
+fear            # freq:    664, 0.0810%, rank: 36
+poor            # freq:    643, 0.0784%, rank: 39
+--              # freq:    609, 0.0743%, rank: 41
+hast            # freq:    603, 0.0735%, rank: 44
+son             # freq:    592, 0.0722%, rank: 45
+dead            # freq:    568, 0.0693%, rank: 47
+bear            # freq:    556, 0.0678%, rank: 48
+duke            # freq:    551, 0.0672%, rank: 50
+
+# === SHAKESPEARE-SPECIFIC TERMS ===
+thy             # freq:   4157, 0.5069%, rank:  1 (SHAKESPEARE)
+thee            # freq:   3266, 0.3983%, rank:  2 (SHAKESPEARE)
+hath            # freq:   1963, 0.2394%, rank:  8 (SHAKESPEARE)
+'tis            # freq:   1376, 0.1678%, rank: 11 (SHAKESPEARE)
+doth            # freq:   1065, 0.1299%, rank: 13 (SHAKESPEARE)
+exeunt          # freq:   1035, 0.1262%, rank: 15 (SHAKESPEARE)
