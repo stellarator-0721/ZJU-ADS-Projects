@@ -1,0 +1,7 @@
+Algorithm: Simulated Annealing
+Input file: data/input_10.txt
+Rectangles: 10
+Strip width: 200
+Result height: 4678
+Runs: 10
+Average CPU time (seconds): 0.000250200

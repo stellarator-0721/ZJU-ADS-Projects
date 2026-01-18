@@ -1,0 +1,7 @@
+Algorithm: Greedy NFDH
+Input file: data/input_10000.txt
+Rectangles: 10000
+Strip width: 200
+Result height: 16802896
+Runs: 1000
+Average CPU time (seconds): 0.000615728
